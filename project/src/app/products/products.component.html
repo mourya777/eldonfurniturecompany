@@ -1,47 +1,79 @@
-<div class="container">
-    <h3 class="text-center mt-5 mb-5"></h3>
-    <table class="table">
-        <thead>
-            <tr>
-                <th class="col_table  sno_col ">
-                    Sr No
-                </th>
-                <th class="col_table "> Brand Name </th>
-                <th class="col_table "> Collection </th>
-                <th class="col_table "> Categories </th>
-                <th class="col_table "> Related Products </th>
-                <!-- <th class="col_table "> Categories </th> -->
+<div class="subheader">
+    <h3 class="text-center">Products</h3>
+</div>
+<div class="pt-5 pb-5 light-bg" >
+    <div class="row m-0">
+        <div class="col-md-3">
+           
+              
+            <div class="sidebar-left"> <h4>Categories</h4>
+                <ul>
+                    <li>
+                        <a href="">Living Room</a>
+                    </li>
+                    <li>
+                        <a href="">Dining room</a>
+                    </li>
+                    <li>
+                        <a href="">Bedroom</a>
+                    </li>
+                    <li>
+                        <a href="">Home Office</a>
+                    </li>
+                    
+                    <li>
+                        <a href="">Accessories</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="row product-grid m-0">
+                <div class="col-md-4" *ngFor="let item of productData | paginate
+                : {
+                    itemsPerPage: tableSize,
+                    currentPage: page,
+                    totalItems: count
+                  }; let i = index">
+                    <div class="img-container">
+                        <img src="../../assets/images/images/showroom11.jpg" class="img-fluid">
+                        <div class="share-div"><span class="mdi mdi-heart-outline"></span>
+                        </div>
+                    </div>
+                    <h1>{{item.brand}} <small>({{item.collection}})</small></h1>
+
+                    <div class="ratings"><span class="mdi mdi-star"></span> <span class="mdi mdi-star"></span> <span class="mdi mdi-star"></span> <span class="mdi mdi-star"></span> (319)</div>
+                    <div class="pro-price">$369.99 - $399.99</div>
+
+                    <ng-container *ngFor="let subItem of item.categories">
+                        <div class="col_table text_capitalize"> {{subItem.path}}</div>
+                    </ng-container>
+                    <h3>{{item.relatedProducts.crossSell}}</h3>
+                    <h3>{{item.relatedProducts.series}}</h3>
 
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of productData | paginate
-              : {
-                  itemsPerPage: tableSize,
-                  currentPage: page,
-                  totalItems: count
-                }; let i = index">
-                <td class="col_table sno_col "> {{i + 1}}</td>
-                <td class="col_table text_capitalize"> {{item.brand}}</td>
-                <td class="col_table text_capitalize"> {{item.collection}}</td>
-                <ng-container *ngFor="let subItem of item.categories">
-                    <td class="col_table text_capitalize"> {{subItem.path}}</td>
-                </ng-container>
-                <!-- <ng-container *ngFor="let subItem of item.relatedProducts"> -->
 
 
-                <td class="col_table text_capitalize"> {{item.relatedProducts.crossSell}}</td>
-                <td class="col_table text_capitalize"> {{item.relatedProducts.series}}</td>
+                </div>
 
-                <!-- </ng-container> -->
 
-            </tr>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+                </pagination-controls>
+            </div>
 
-        </tbody>
-    </table>
-    <div class="d-flex justify-content-center">
-        <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
-        </pagination-controls>
+        </div>
+        
+
     </div>
+
+
+
+
+
+
+   
 </div>
