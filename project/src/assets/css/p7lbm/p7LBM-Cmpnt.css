@@ -1,0 +1,163 @@
+/*
+ ----------------------------- 
+ PVII Layout Builder Menu
+ by Project Seven Development
+ www.projectseven.com
+ LBM Components Styles
+ -----------------------------
+*/
+
+
+/*
+**********************
+ LBM Button Component
+    Editable Styles 
+**********************
+*/
+a.lbm-btn {
+	background-color: rgb(180,180,160);
+	color: #000;
+	padding: 10px 15px;
+}
+a.lbm-btn:hover {
+	background-color: rgb(100,100,80);
+	color: #FFF;
+	border-color: inherit;
+}
+.lbm-btn-list-vert a {
+	background-color: rgb(180,180,160);
+	color: #000;
+	padding: 10px 15px;
+}
+.lbm-btn-list-vert a:hover {
+	background-color: rgb(100,100,80);
+	color: #FFF;
+	border-color: inherit;
+}
+.lbm-btn-list-horiz a {
+	background-color: rgb(180,180,160);
+	color: #000;
+	padding: 10px 15px;
+}
+.lbm-btn-list-horiz a:hover {
+	background-color: rgb(100,100,80);
+	color: #FFF;
+	border-color: inherit;
+}
+
+
+/*
+**********************
+ LBM Button Component
+     CORE Styles 
+**********************
+These rules should not be edited
+*/
+a.lbm-btn,
+.lbm-btn-list-vert a,
+.lbm-btn-list-horiz a {
+	display: inline-block;
+	text-decoration: none;
+	margin: 6px 0px;
+}
+.lbm-btn-list-horiz a {
+	display: block;
+}
+.lbm-btn-list-horiz li {
+	display: inline-block;
+}
+.lbm-btn-list-vert a {
+	display: block;
+}
+a.lbm-btn-border,
+.lbm-btn-border.lbm-btn-list-vert a,
+.lbm-btn-border.lbm-btn-list-horiz a {
+	border: 1px solid;
+}
+a.lbm-btn-rnd,
+.lbm-btn-rnd.lbm-btn-list-vert a,
+.lbm-btn-rnd.lbm-btn-list-horiz a {
+	border-radius: 4px;
+}
+
+a.lbm-btn-glass,
+.lbm-btn-glass.lbm-btn-list-vert a,
+.lbm-btn-glass.lbm-btn-list-horiz a {
+	box-shadow: 
+	0 1px 0px rgba(0,0,0,0.75),
+	inset 0 1px rgba(255,255,255,0.3), 
+	inset 0 10px rgba(255,255,255,0.2), 
+	inset 0 10px 20px rgba(255,255,255,0.25), 
+	inset 0 -15px 30px rgba(0,0,0,0.3);
+}
+
+a.lbm-btn-animate,
+.lbm-btn-list-vert.lbm-btn-animate a,
+.lbm-btn-list-horiz.lbm-btn-animate a {
+	-webkit-transition: all linear .3s 0s;
+	transition: all linear .3s 0s;
+}
+.lbm-btn-list-vert,
+.lbm-btn-list-horiz {
+	margin: 0px;
+	padding: 0px;
+}
+.lbm-btn-list-vert li,
+.lbm-btn-list-horiz li {
+	list-style-type: none;
+}
+.lbm-btn-list-horiz li {
+	display: inline-block;
+}
+
+
+/*
+*************************
+ LBM Video-Map Component
+      CORE Styles 
+*************************
+      Do not edit
+*/
+.lbm-video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0px;
+	overflow: hidden;
+}
+.lbm-video-wrapper iframe, .lbm-video-wrapper object, .lbm-video-wrapper embed { 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+}
+
+.lbm-map-wrapper {
+	position: relative; 
+	padding-bottom: 100%; 
+	padding-top: 0px; 
+	height: 0px; 
+	overflow: hidden; 
+	margin-bottom: 20px;
+}
+.lbm-map-wrapper iframe, .lbm-map-wrapper object, .lbm-map-wrapper embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.lbm-video-wrapper iframe,
+.lbm-map-wrapper iframe {
+	box-sizing: border-box;
+}
+.lbm-frame-border iframe {
+	border: 1px solid #000 !important;
+}
+.lbm-frame-rnd iframe {
+	border-radius: 5px;
+}
+
+

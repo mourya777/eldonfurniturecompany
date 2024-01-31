@@ -1,0 +1,45 @@
+/*
+-----------------------------
+PVII Layout Builder Magic
+by Project Seven Development
+www.projectseven.com
+UI Styles: p7LBM_1
+-----------------------------
+
+*** For LBM System Use Only ***
+***  Do Not Edit Manually   ***
+
+*/
+.p7LBM-1-style-1 {
+background-image:url("../images/background.jpg");
+}
+.p7LBM-1-style-2 {
+background-color:rgb(255,255,255);
+background:rgba(255,255,255,0.5);
+}
+.p7LBM-1-style-3 {
+background-color:rgb(255,255,255);
+background:rgba(255,255,255,0.5);
+}
+.p7LBM-1-style-4 {
+background-color:rgb(255,255,255);
+background:rgba(255,255,255,0.6);
+}
+.p7LBM-1-style-5 {
+background-color:rgb(255,255,255);
+background:rgba(255,255,255,0.6);
+}
+.p7LBM-1-style-6 {
+background-color:rgb(192,192,192);
+background:rgba(192,192,192,0.4);
+}
+.p7LBM-1-style-7 {
+color:#FFFFFF;
+background-color:rgb(216,0,43);
+background:rgba(216,0,43,0.85);
+}
+.p7LBM-1-style-8 {
+color:#ffffff;
+background-color:rgb(255,255,255);
+background:rgba(255,255,255,0.85);
+}

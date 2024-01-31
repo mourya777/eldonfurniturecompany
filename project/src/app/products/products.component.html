@@ -1,0 +1,47 @@
+<div class="container">
+    <h3 class="text-center mt-5 mb-5"></h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="col_table  sno_col ">
+                    Sr No
+                </th>
+                <th class="col_table "> Brand Name </th>
+                <th class="col_table "> Collection </th>
+                <th class="col_table "> Categories </th>
+                <th class="col_table "> Related Products </th>
+                <!-- <th class="col_table "> Categories </th> -->
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of productData | paginate
+              : {
+                  itemsPerPage: tableSize,
+                  currentPage: page,
+                  totalItems: count
+                }; let i = index">
+                <td class="col_table sno_col "> {{i + 1}}</td>
+                <td class="col_table text_capitalize"> {{item.brand}}</td>
+                <td class="col_table text_capitalize"> {{item.collection}}</td>
+                <ng-container *ngFor="let subItem of item.categories">
+                    <td class="col_table text_capitalize"> {{subItem.path}}</td>
+                </ng-container>
+                <!-- <ng-container *ngFor="let subItem of item.relatedProducts"> -->
+
+
+                <td class="col_table text_capitalize"> {{item.relatedProducts.crossSell}}</td>
+                <td class="col_table text_capitalize"> {{item.relatedProducts.series}}</td>
+
+                <!-- </ng-container> -->
+
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+        <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+        </pagination-controls>
+    </div>
+</div>
