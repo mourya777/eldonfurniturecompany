@@ -1,12 +1,13 @@
 <div class="subheader">
     <h3 class="text-center">Products</h3>
 </div>
-<div class="pt-5 pb-5 light-bg" >
+<div class="pt-5 pb-5 light-bg">
     <div class="row m-0">
         <div class="col-md-3">
-           
-              
-            <div class="sidebar-left"> <h4>Categories</h4>
+
+
+            <div class="sidebar-left">
+                <h4>Categories</h4>
                 <ul>
                     <li>
                         <a href="">Living Room</a>
@@ -20,7 +21,7 @@
                     <li>
                         <a href="">Home Office</a>
                     </li>
-                    
+
                     <li>
                         <a href="">Accessories</a>
                     </li>
@@ -37,16 +38,30 @@
                     currentPage: page,
                     totalItems: count
                   }; let i = index">
-                    <div class="img-container">
-                        <img src="../../assets/images/images/showroom11.jpg" class="img-fluid">
-                        <div class="share-div"><span class="mdi mdi-heart-outline"></span>
+                    <ng-container *ngFor="let subItem of item.media.mainImages">
+                        <!-- <ng-container *ngFor="let subItem of subItem.mainImages"> -->
+                        <div class="img-container">
+                            <img src="{{subItem.url}}" class="img-fluid">
+                            <div class="share-div"><span class="mdi mdi-heart-outline"></span>
+                            </div>
                         </div>
-                    </div>
+                        <!-- </ng-container> -->
+                    </ng-container>
                     <h1>{{item.brand}} <small>({{item.collection}})</small></h1>
+                    <!-- <ng-container *ngFor="let subItem of item"> -->
+                    <div class="col_table text_capitalize"> {{item.name}}</div>
+                    <!-- </ng-container> -->
+                    <ng-container *ngFor="let subItem of item.variants">
+                        <ng-container *ngFor="let sub of subItem.price.rates">
+                            <div class="ratings"><span class="mdi mdi-star"></span> <span class="mdi mdi-star"></span>
+                                <span class="mdi mdi-star"></span> <span class="mdi mdi-star"></span> ({{sub.rate}})
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                    <ng-container *ngFor="let subItem of item.variants">
 
-                    <div class="ratings"><span class="mdi mdi-star"></span> <span class="mdi mdi-star"></span> <span class="mdi mdi-star"></span> <span class="mdi mdi-star"></span> (319)</div>
-                    <div class="pro-price">$369.99 - $399.99</div>
-
+                        <div class="pro-price">${{subItem.price.retailPrice}}</div>
+                    </ng-container>
                     <ng-container *ngFor="let subItem of item.categories">
                         <div class="col_table text_capitalize"> {{subItem.path}}</div>
                     </ng-container>
@@ -66,7 +81,7 @@
             </div>
 
         </div>
-        
+
 
     </div>
 
@@ -75,5 +90,5 @@
 
 
 
-   
+
 </div>
