@@ -19,33 +19,26 @@ export class ProductsComponent implements OnInit {
   bedroomValue: string = '';
   categories = ['Living Room', 'Dining Room', 'Bedroom', 'Home Office'];
 
-  @ViewChild('livingRoomLink', { static: false }) livingRoomLink: ElementRef | any;
-  livingRoomText: any;
   value: any;
   productData2: any;
   // filteredData: any[] = [];
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    console.log(this.livingRoomText)
+
     this.getProducts()
   }
-  ngAfterViewInit() {
-    // Access the text content of the anchor tag
-    this.livingRoomText = this.livingRoomLink.nativeElement.textContent;
 
-    console.log('Living Room:', this.livingRoomText);
-  }
 
   getProducts() {
 
     this.productService.get().subscribe((data: any) => {
-      console.log(data)
+
       if (data) {
         this.productData = data
 
         this.productCategory = data[0].categories
-        console.log(this.productCategory)
+
 
       } else {
         this.productData = []
@@ -60,7 +53,7 @@ export class ProductsComponent implements OnInit {
     // const pathParts = item.split('>');
     // this.bedroomValue = pathParts[1] ? pathParts[1].trim() : '';
     this.productService.get().subscribe((data: any) => {
-      console.log(data)
+
       if (data) {
         this.productData2 = data
         this.filterDataByCategoryPath(this.value, this.productData2)
@@ -71,15 +64,14 @@ export class ProductsComponent implements OnInit {
   filterDataByCategoryPath(selectedCategoryPath: string, data: any) {
 
     this.filteredData = data.filter((item: any) => {
-      console.log(item.categories[0].path)
-      const pathParts = item.categories[0].path.split('>');
-      // this.bedroomValue = pathParts[1] ? pathParts[1].trim() : '';
-      console.log(pathParts)
 
-      pathParts.some(selectedCategoryPath)
+
+      return item.categories.some((category: any) => {
+
+        return category.path.includes(selectedCategoryPath)
+      })
     }
     );
-    console.log(this.filteredData)
 
 
   }
