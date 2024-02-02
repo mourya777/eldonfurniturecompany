@@ -13,8 +13,13 @@ export class ProductDetailComponent {
 
   ngOnInit(): void {
 
+
+
     this.getProducts()
+
+    
   }
+
   getProducts() {
 
     this.productService.get().subscribe((data: any) => {
@@ -30,3 +35,5 @@ export class ProductDetailComponent {
     })
   }
 }
+
+
