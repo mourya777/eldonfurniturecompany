@@ -4,33 +4,25 @@
 <div class="pt-5 pb-5 light-bg">
     <div class="row m-0">
         <div class="col-md-3">
+            <h4>Categories</h4>
+            <ng-container *ngFor="let item of categories">
+                <!-- <ng-container *ngFor="let subItem of item.categories"> -->
+                <div class="sidebar-left">
 
+                    <ul>
+                        <li>
+                            <a (click)="getValue($event, productData)">{{item}}</a>
+                        </li>
 
-            <div class="sidebar-left">
-                <h4>Categories</h4>
-                <ul>
-                    <li>
-                        <a #livingRoomLink href="">Living Room</a>
-                    </li>
-                    <li>
-                        <a href="">Dining room</a>
-                    </li>
-                    <li>
-                        <a href="">Bedroom</a>
-                    </li>
-                    <li>
-                        <a href="">Home Office</a>
-                    </li>
+                    </ul>
 
-                    <li>
-                        <a href="">Accessories</a>
-                    </li>
-                </ul>
+                </div>
+                <!-- </ng-container> -->
+            </ng-container>
 
-            </div>
         </div>
 
-        <div class="col-md-9">
+        <div class="col-md-9" *ngIf="filteredData.length==0">
             <div class="row product-grid m-0">
                 <div class="col-md-4" *ngFor="let item of productData | paginate
                 : {
@@ -72,6 +64,61 @@
 
 
                 </div>
+
+
+
+
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+                </pagination-controls>
+            </div>
+
+        </div>
+        <div class="col-md-9" *ngIf="filteredData.length>0">
+            <div class="row product-grid m-0">
+                <div class="col-md-4" *ngFor="let item of filteredData | paginate
+                : {
+                    itemsPerPage: tableSize,
+                    currentPage: page,
+                    totalItems: count
+                  }; let i = index">
+                    <ng-container *ngFor="let subItem of item.media.mainImages">
+                        <!-- <ng-container *ngFor="let subItem of subItem.mainImages"> -->
+                        <div class="img-container">
+                            <img src="{{subItem.url}}" class="img-fluid" routerLink="/product-detail">
+                            <div class="share-div"><span class="mdi mdi-heart-outline"></span>
+                            </div>
+                        </div>
+                        <!-- </ng-container> -->
+                    </ng-container>
+                    <h1>{{item.brand}} <small>({{item.collection}})</small></h1>
+                    <!-- <ng-container *ngFor="let subItem of item"> -->
+                    <div class="col_table text_capitalize"> {{item.name}}</div>
+                    <!-- </ng-container> -->
+                    <ng-container *ngFor="let subItem of item.variants">
+                        <ng-container *ngFor="let sub of subItem.price.rates">
+                            <div class="ratings"><span class="mdi mdi-star"></span> <span class="mdi mdi-star"></span>
+                                <span class="mdi mdi-star"></span> <span class="mdi mdi-star"></span> ({{sub.rate}})
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                    <ng-container *ngFor="let subItem of item.variants">
+
+                        <div class="pro-price">${{subItem.price.retailPrice}}</div>
+                    </ng-container>
+                    <ng-container *ngFor="let subItem of item.categories">
+                        <div class="col_table text_capitalize"> {{subItem.path}}</div>
+                    </ng-container>
+                    <!-- <h3>{{item.relatedProducts.crossSell}}</h3> -->
+                    <!-- <h3>{{item.relatedProducts.series}}</h3> -->
+
+
+
+
+                </div>
+
+
 
 
             </div>
