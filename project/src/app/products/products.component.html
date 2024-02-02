@@ -10,7 +10,7 @@
                 <h4>Categories</h4>
                 <ul>
                     <li>
-                        <a href="">Living Room</a>
+                        <a #livingRoomLink href="">Living Room</a>
                     </li>
                     <li>
                         <a href="">Dining room</a>
@@ -41,7 +41,7 @@
                     <ng-container *ngFor="let subItem of item.media.mainImages">
                         <!-- <ng-container *ngFor="let subItem of subItem.mainImages"> -->
                         <div class="img-container">
-                            <img src="{{subItem.url}}" class="img-fluid">
+                            <img src="{{subItem.url}}" class="img-fluid" routerLink="/product-detail">
                             <div class="share-div"><span class="mdi mdi-heart-outline"></span>
                             </div>
                         </div>
@@ -65,8 +65,8 @@
                     <ng-container *ngFor="let subItem of item.categories">
                         <div class="col_table text_capitalize"> {{subItem.path}}</div>
                     </ng-container>
-                    <h3>{{item.relatedProducts.crossSell}}</h3>
-                    <h3>{{item.relatedProducts.series}}</h3>
+                    <!-- <h3>{{item.relatedProducts.crossSell}}</h3> -->
+                    <!-- <h3>{{item.relatedProducts.series}}</h3> -->
 
 
 

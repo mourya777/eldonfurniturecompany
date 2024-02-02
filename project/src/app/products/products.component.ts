@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from './product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -14,10 +15,18 @@ export class ProductsComponent implements OnInit {
   count: number = 0;
   tableSize: number = 12;
   tableSizes: any = [3, 6, 9, 12];
-  constructor(private productService: ProductService) { }
+  @ViewChild('livingRoomLink', { static: false }) livingRoomLink: ElementRef | any;
+
+  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
     this.getProducts()
+  }
+  ngAfterViewInit() {
+    // Access the text content of the anchor tag
+    const livingRoomText = this.livingRoomLink.nativeElement.textContent;
+
+    console.log('Living Room:', livingRoomText);
   }
 
   getProducts() {
@@ -31,6 +40,10 @@ export class ProductsComponent implements OnInit {
         this.productData = []
       }
     })
+  }
+
+  send() {
+    this.router.navigateByUrl('/product-detail')
   }
 
   onTableDataChange(event: any) {
