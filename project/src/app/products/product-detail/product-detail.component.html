@@ -69,8 +69,8 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">All Furniture</a></li>
-                    <li class="breadcrumb-item"><a href="#">Kids Bedroom</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Marceline Full Bed with LED Headboard White
+                    <li class="breadcrumb-item"><a href="#">{{secondCategory}}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{foundItem.name}}
                     </li>
                 </ol>
             </nav>
@@ -78,80 +78,85 @@
             <div class="row details-wrapper">
                 <!-- {{productItem.media.mainImages}} -->
                 <ng-container *ngFor="let subItem of result">
-                    <!-- {{subItem.url}} -->
-                    <!-- <div class="col-md-5">
+                    <ng-container *ngFor="let subItem2 of result2">
+                        <!-- {{subItem.url}} -->
+                        <!-- <div class="col-md-5">
                         <img src="{{subItem.url}}" class="img-fluid" /> -->
-                    <div class="col-md-5">
+                        <div class="col-md-5">
 
-                        <div class="dz-product-detail sticky-top" style="width:518px;">
-                            <div class="swiper-btn-center-lr">
-                                <div class="swiper product-gallery-swiper2">
-                                    <div class="swiper-wrapper" id="lightgallery">
-                                        <div class="swiper-slide">
-                                            <div class="dz-media DZoomImage">
-                                                <a class="mfp-link lg-item" href="https://placehold.co/600x400"
-                                                    data-src="https://placehold.co/600x400">
-                                                    <i class="feather icon-maximize dz-maximize top-right"></i>
-                                                </a>
-                                                <img src="{{subItem.url}}" alt="image">
+                            <div class="dz-product-detail sticky-top" style="width:518px;">
+                                <div class="swiper-btn-center-lr">
+                                    <div class="swiper product-gallery-swiper2">
+                                        <div class="swiper-wrapper" id="lightgallery">
+                                            <div class="swiper-slide">
+                                                <div class="dz-media DZoomImage">
+                                                    <a class="mfp-link lg-item" href="https://placehold.co/600x400"
+                                                        data-src="https://placehold.co/600x400">
+                                                        <i class="feather icon-maximize dz-maximize top-right"></i>
+                                                    </a>
+                                                    <img src="{{subItem.url}}" alt="image">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="dz-media DZoomImage">
-                                                <a class="mfp-link lg-item" href="https://placehold.co/600x400"
-                                                    data-src="https://placehold.co/600x400">
-                                                    <i class="feather icon-maximize dz-maximize top-right"></i>
-                                                </a>
-                                                <img src="{{subItem.url}}" alt="image">
+                                            <div class="swiper-slide">
+                                                <div class="dz-media DZoomImage">
+                                                    <a class="mfp-link lg-item" href="https://placehold.co/600x400"
+                                                        data-src="https://placehold.co/600x400">
+                                                        <i class="feather icon-maximize dz-maximize top-right"></i>
+                                                    </a>
+                                                    <img src="{{subItem2.url}}" alt="image">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="dz-media DZoomImage">
-                                                <a class="mfp-link lg-item" href="https://placehold.co/600x400"
-                                                    data-src="https://placehold.co/600x400">
-                                                    <i class="feather icon-maximize dz-maximize top-right"></i>
-                                                </a>
-                                                <img src="{{subItem.url}}" alt="image">
+                                            <div class="swiper-slide">
+                                                <div class="dz-media DZoomImage">
+                                                    <a class="mfp-link lg-item" href="https://placehold.co/600x400"
+                                                        data-src="https://placehold.co/600x400">
+                                                        <i class="feather icon-maximize dz-maximize top-right"></i>
+                                                    </a>
+                                                    <img src="{{subItem2.url}}" alt="image">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="dz-media DZoomImage">
-                                                <a class="mfp-link lg-item" href="https://placehold.co/600x400"
-                                                    data-src="https://placehold.co/600x400">
-                                                    <i class="feather icon-maximize dz-maximize top-right"></i>
-                                                </a>
-                                                <img src="{{subItem.url}}" alt="image">
+                                            <div class="swiper-slide">
+                                                <div class="dz-media DZoomImage">
+                                                    <a class="mfp-link lg-item" href="https://placehold.co/600x400"
+                                                        data-src="https://placehold.co/600x400">
+                                                        <i class="feather icon-maximize dz-maximize top-right"></i>
+                                                    </a>
+                                                    <img src="{{subItem2.url}}" alt="image">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper product-gallery-swiper thumb-swiper-lg swiper-vertical">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <img src="{{subItem.url}}" alt="image">
+                                    <div class="swiper product-gallery-swiper thumb-swiper-lg swiper-vertical">
+
+
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <img src="{{subItem2.url}}" alt="image">
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="{{subItem2.url}}" alt="image">
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="{{subItem2.url}}" alt="image">
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="{{subItem2.url}}" alt="image">
+                                            </div>
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="{{subItem.url}}" alt="image">
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="{{subItem.url}}" alt="image">
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="{{subItem.url}}" alt="image">
-                                        </div>
+                                        <!-- </ng-container> -->
                                     </div>
                                 </div>
                             </div>
+
+
+
+
+
+
+
                         </div>
-
-
-
-
-
-
-
-                    </div>
-                    <!-- </div> -->
+                        <!-- </div> -->
+                    </ng-container>
                 </ng-container>
 
                 <!-- <ng-container *ngFor="let subItem of foundItem.variants"> -->

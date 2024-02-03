@@ -15,6 +15,10 @@ export class ProductDetailComponent {
   result: any;
   variant: any;
   desc: any;
+  result2: any;
+  category: any;
+  categoriesArray: string[] = [];
+  secondCategory: string | undefined;
 
   constructor(private productService: ProductService, private route: ActivatedRoute) { }
 
@@ -52,9 +56,15 @@ export class ProductDetailComponent {
               if (element.productId === data.id) {
 
                 this.productItem = element;
+                this.category = Object.values(variant.categories)
+                console.log(this.category[0].path)
+                this.categoriesArray = this.category[0].path.split(' > ');
+                console.log(this.categoriesArray)
+                this.secondCategory = this.categoriesArray[1];
                 this.desc = variant.description
                 this.result = variant.media.mainImages
-
+                this.result2 = variant.media.additionalImages
+                debugger
                 return variant;
               } else {
                 // 
