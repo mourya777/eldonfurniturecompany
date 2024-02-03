@@ -11,6 +11,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { TestComponent } from './test/test.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { CommonModule } from '@angular/common';
+import { RemoveHtmlTagsPipe } from './remove-html-tags.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CommonModule } from '@angular/common';
     HomeComponent,
     ProductsComponent,
     TestComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    RemoveHtmlTagsPipe
   ],
   imports: [
     BrowserModule,

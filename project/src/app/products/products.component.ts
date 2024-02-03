@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from './product.service';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -22,7 +23,7 @@ export class ProductsComponent implements OnInit {
   value: any;
   productData2: any;
   // filteredData: any[] = [];
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -86,4 +87,15 @@ export class ProductsComponent implements OnInit {
     this.getProducts();
   }
 
+  navigateToDestination(id: number, data: any) {
+    const navigationExtras: NavigationExtras = {
+      state: {
+        id: id,
+        customData: data
+      }
+    };
+
+    this.router.navigate(['/product-detail'], navigationExtras);
+
+  }
 }

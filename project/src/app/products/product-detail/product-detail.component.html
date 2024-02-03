@@ -76,42 +76,54 @@
             </nav>
 
             <div class="row details-wrapper">
-                <div class="col-md-5">
-                    <img src="../../../assets/images/images/2-7-22-yourplace.png" class="img-fluid"/>
+                <!-- {{productItem.media.mainImages}} -->
+                <ng-container *ngFor="let subItem of result">
+                    <!-- {{subItem.url}} -->
+                    <div class="col-md-5">
+                        <img src="{{subItem.url}}" class="img-fluid" />
 
 
-                </div>
-                <div class="col-md-7">
-                    <h1>Marceline Full Bed With LED Headboard White</h1>
-                    <p>Dinsmore - Black / Gray - Twin/Full Bunk Bed W/Ladder</p>
-                    <h3>SKU: 123456</h3>
-                    <h2>$123.00</h2>
-                    <div class="ratings"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
-                            class="mdi mdi-star"></span><span class="mdi mdi-star"></span> (21.19) </div>
-                </div>
+                    </div>
+                </ng-container>
+
+                <!-- <ng-container *ngFor="let subItem of foundItem.variants"> -->
+                <ng-container *ngFor="let sub of foundItem.price?.rates">
+                    <div class="col-md-7">
+                        <h1>{{foundItem.name}}</h1>
+                        <p>Dinsmore - Black / Gray - Twin/Full Bunk Bed W/Ladder</p>
+                        <h3>SKU: {{foundItem.sku}}</h3>
+                        <h2>${{foundItem.price.retailPrice}}</h2>
+                        <div class="ratings"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
+                                class="mdi mdi-star"></span><span class="mdi mdi-star"></span> ({{sub.rate}}) </div>
+                    </div>
+                    <!-- </ng-container> -->
+                </ng-container>
 
             </div>
 
-            
             <div class="tabs">
-                <input class="input" name="tabs" type="radio" id="tab-1" checked="checked"/>
+                <input class="input" name="tabs" type="radio" id="tab-1" checked="checked" />
                 <label class="label" for="tab-1">Description</label>
                 <div class="panel">
-                  <h5>Description</h5>
-                  <p>Arlina Design (specifically, the sweet orange) is the fruit of the citrus species Citrus × sinensis in the family Rutaceae</p>
-                  <p>The fruit of the Citrus × sinensis is considered a sweet orange, whereas the fruit of the Citrus × aurantium is considered a bitter orange. The sweet orange reproduces asexually (apomixis through nucellar embryony); varieties of sweet orange arise through mutations.</p>
+                    <h5>Description</h5>
+                    <p>{{desc | removeHtmlTags}}</p>
+
                 </div>
-                <input class="input" name="tabs" type="radio" id="tab-2"/>
+                <input class="input" name="tabs" type="radio" id="tab-2" />
                 <label class="label" for="tab-2">Dimension & Weight</label>
                 <div class="panel">
-                  <h5>Dimension & Weight</h5>
-                  <ul>
-                                            <li><strong>Piece: Full Bed</strong></li>
-                                                                                        <li>Width: 56 in</li>                                            <li>Depth: 79.25 in</li>                                            <li>Height: 50.5 in</li>
-                                                                                                                                                                                
-                                            <li>Weight: 84.78 lbs</li>  </ul>
+                    <h5>Dimension & Weight</h5>
+                    <ul>
+                        <li><strong>Piece: {{foundItem.productType}} </strong></li>
+                        <li>Width: {{foundItem.dimensions.width}} {{foundItem.dimensions.unitOfMeasureDistance}}</li>
+                        <li>Weight: {{foundItem.dimensions.weight}} {{foundItem.dimensions.unitOfMeasureWeight}}</li>
+                        <li>Height: {{foundItem.dimensions.height}} {{foundItem.dimensions.unitOfMeasureDistance}}</li>
+                        <li>Length: {{foundItem.dimensions.length}} {{foundItem.dimensions.unitOfMeasureDistance}}</li>
+
+                        <!-- <li>Weight: 84.78 lbs</li> -->
+                    </ul>
                 </div>
-              </div>
+            </div>
 
 
 

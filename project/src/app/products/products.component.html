@@ -30,14 +30,18 @@
                     currentPage: page,
                     totalItems: count
                   }; let i = index">
-                    <ng-container *ngFor="let subItem of item.media.mainImages">
-                        <!-- <ng-container *ngFor="let subItem of subItem.mainImages"> -->
-                        <div class="img-container">
-                            <img src="{{subItem.url}}" class="img-fluid" routerLink="/product-detail">
-                            <div class="share-div"><span class="mdi mdi-heart-outline"></span>
+                    <ng-container *ngFor="let subItem1 of item.variants">
+
+                        <ng-container *ngFor="let subItem of item.media.mainImages">
+                            <!-- <ng-container *ngFor="let subItem of subItem.mainImages"> -->
+                            <div class="img-container">
+                                <img src="{{subItem.url}}" class="img-fluid"
+                                    [routerLink]="['/product-detail',subItem1.productId]">
+                                <div class="share-div"><span class="mdi mdi-heart-outline"></span>
+                                </div>
                             </div>
-                        </div>
-                        <!-- </ng-container> -->
+                            <!-- </ng-container> -->
+                        </ng-container>
                     </ng-container>
                     <h1>{{item.brand}} <small>({{item.collection}})</small></h1>
                     <!-- <ng-container *ngFor="let subItem of item"> -->
@@ -83,14 +87,17 @@
                     currentPage: page,
                     totalItems: count
                   }; let i = index">
-                    <ng-container *ngFor="let subItem of item.media.mainImages">
-                        <!-- <ng-container *ngFor="let subItem of subItem.mainImages"> -->
-                        <div class="img-container">
-                            <img src="{{subItem.url}}" class="img-fluid" routerLink="/product-detail">
-                            <div class="share-div"><span class="mdi mdi-heart-outline"></span>
+                    <ng-container *ngFor="let subItem1 of item.variants">
+                        <ng-container *ngFor="let subItem of item.media.mainImages">
+                            <!-- <ng-container *ngFor="let subItem of subItem.mainImages"> -->
+                            <div class="img-container">
+                                <img src="{{subItem.url}}" class="img-fluid"
+                                    [routerLink]="['/product-detail',subItem1.productId]">
+                                <div class="share-div"><span class="mdi mdi-heart-outline"></span>
+                                </div>
                             </div>
-                        </div>
-                        <!-- </ng-container> -->
+                            <!-- </ng-container> -->
+                        </ng-container>
                     </ng-container>
                     <h1>{{item.brand}} <small>({{item.collection}})</small></h1>
                     <!-- <ng-container *ngFor="let subItem of item"> -->
