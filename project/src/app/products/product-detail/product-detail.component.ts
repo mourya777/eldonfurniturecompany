@@ -19,6 +19,7 @@ export class ProductDetailComponent {
   category: any;
   categoriesArray: string[] = [];
   secondCategory: string | undefined;
+  brandName: any;
 
   constructor(private productService: ProductService, private route: ActivatedRoute) { }
 
@@ -62,6 +63,7 @@ export class ProductDetailComponent {
                 console.log(this.categoriesArray)
                 this.secondCategory = this.categoriesArray[1];
                 this.desc = variant.description
+                this.brandName = variant.consumerBrand
                 this.result = variant.media.mainImages
                 this.result2 = variant.media.additionalImages
 
@@ -91,6 +93,7 @@ export class ProductDetailComponent {
                 // 
               }
               console.log(this.foundItem)
+
               // this.fetchedData = this.foundItem
               return this.foundItem
             });

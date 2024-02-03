@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
 
-  apiUrl: 'https://data.catalogkiosk.com/v3/'
+  apiUrl: 'https://data.catalogkiosk.com/v3/',
+  imageBaseUrl: 'https://www.eldonfurniturecompany.com/ashleyfurniture'
 };
 
 /*
