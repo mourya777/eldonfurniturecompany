@@ -1,0 +1,8 @@
+.product-grid .img-container{
+    height:250px;
+    overflow: hidden;
+}
+.product-grid .img-container img{
+    height: 100%;
+    width: 100%;
+}
