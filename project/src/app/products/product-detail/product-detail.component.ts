@@ -26,13 +26,14 @@ export class ProductDetailComponent {
   ngOnInit(): void {
 
     this.route.params.subscribe((data) => {
-
+      this.getProducts(data);
       if (data) {
 
         // this.feature_Id = data.id;
         // // this.getMenuList();
         this.getProducts(data);
       }
+
     });
   }
   getProducts(data: any) {
@@ -40,7 +41,7 @@ export class ProductDetailComponent {
     this.productService.get().subscribe((response: any) => {
 
       if (response) {
-
+        debugger
         this.productData = response
         if (this.productData) {
 
