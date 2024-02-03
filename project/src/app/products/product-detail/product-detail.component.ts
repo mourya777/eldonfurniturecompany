@@ -25,9 +25,6 @@ export class ProductDetailComponent {
 
   ngOnInit(): void {
 
-    // this.getProducts()
-    const id = this.route.snapshot
-    const customData = this.route.snapshot
     this.route.params.subscribe((data) => {
 
       if (data) {
@@ -38,7 +35,7 @@ export class ProductDetailComponent {
       }
     });
   }
-  getProducts(data?: any) {
+  getProducts(data: any) {
 
     this.productService.get().subscribe((response: any) => {
 
