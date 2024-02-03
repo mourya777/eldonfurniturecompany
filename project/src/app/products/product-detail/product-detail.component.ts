@@ -64,7 +64,7 @@ export class ProductDetailComponent {
                 this.desc = variant.description
                 this.result = variant.media.mainImages
                 this.result2 = variant.media.additionalImages
-                debugger
+
                 return variant;
               } else {
                 // 
