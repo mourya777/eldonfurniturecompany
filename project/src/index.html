@@ -35,7 +35,11 @@
 
 </head>
 
-<body>
+<body class="loading">
+  <div id="preloader">
+    <div class="loader"></div>
+
+  </div>
   <div id="fb-root"></div>
   <script>(function (d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -59,6 +63,20 @@
   <script src="../../../assets/js/assets/vendor/lightgallery/dist/plugins/zoom/lg-zoom.min.js"></script>
   <!-- LIGHTGALLERY JS-->
   <script src="../../../assets/js/assets/js/custom.js"></script><!-- CUSTOM JS -->
+
+ <!-- <script>
+jQuery(window).on('load', function() {
+"use strict";
+    // will first fade out the loading animation
+    jQuery("#status").fadeOut();
+    // will fade out the whole DIV that covers the website.
+jQuery("#preloader").delay(1000).fadeOut("slow");
+  $("#preloader").fadeOut(1000, function() {
+      $('body').removeClass('loading');
+  });
+
+})
+ </script> -->
 </body>
 
 </html>

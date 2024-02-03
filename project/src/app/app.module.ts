@@ -13,18 +13,18 @@ import { ProductDetailComponent } from './products/product-detail/product-detail
 import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { RemoveHtmlTagsPipe } from './remove-html-tags.pipe';
 import { LoaderComponent } from './loader/loader.component';
-import { NgxUiLoaderModule, NgxUiLoaderConfig, SPINNER, POSITION, PB_DIRECTION, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
-import { LoadingBarModule } from '@ngx-loading-bar/core';
+// import { NgxUiLoaderModule, NgxUiLoaderConfig, SPINNER, POSITION, PB_DIRECTION, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
+// import { LoadingBarModule } from '@ngx-loading-bar/core';
 
-const ngxUiLoaderConfig: NgxUiLoaderConfig = {
-  bgsColor: 'rgba(12,80,219,0.98)',
-  bgsOpacity: 1,
-  bgsPosition: POSITION.bottomRight,
-  bgsSize: 40,
-  bgsType: SPINNER.threeStrings,
-  fgsColor: 'rgba(12,80,219,0.98)',
-  fgsPosition: POSITION.centerCenter
-};
+// const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+//   bgsColor: 'rgba(12,80,219,0.98)',
+//   bgsOpacity: 1,
+//   bgsPosition: POSITION.bottomRight,
+//   bgsSize: 40,
+//   bgsType: SPINNER.threeStrings,
+//   fgsColor: 'rgba(12,80,219,0.98)',
+//   fgsPosition: POSITION.centerCenter
+// };
 
 @NgModule({
   declarations: [
@@ -41,11 +41,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CommonModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule,
-    LoadingBarModule,
-    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
-    NgxUiLoaderRouterModule, // import this module for showing loader automatically when navigating between app routes
-    NgxUiLoaderHttpModule,
+    NgxPaginationModule
   ],
   providers: [ProductService,
     {

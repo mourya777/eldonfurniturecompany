@@ -579,3 +579,62 @@ When inserting an iframe-based video or Google Map, add a DIV first and assign t
 .light-bg {
 	background: rgba(255, 255, 255, 0.6);
 }
+body,
+html {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background: #dcdcdc;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+h1 {
+  color: #4a4a4a;
+  text-align: center;
+}
+img {
+  margin: 0 auto;
+  display: block;
+}
+
+/*14 .preloader 
+---------------------------------------*/
+#preloader {
+	background: rgba(0,0,0,0.5) ;
+	height: 100%;
+	background-size:250px;
+	position: fixed;
+	width: 100%;
+	z-index: 9999999;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	overflow-y: hidden
+	}
+	.loading {
+	overflow: hidden
+	}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+	width: 60px;
+	aspect-ratio: 2;
+	--_g: no-repeat radial-gradient(circle closest-side,#fff 90%,#0000);
+	background: 
+	  var(--_g) 0%   50%,
+	  var(--_g) 50%  50%,
+	  var(--_g) 100% 50%;
+	background-size: calc(100%/3) 50%;
+	animation: l3 1s infinite linear;
+	position: absolute;
+	left:49%;
+	top:49%;
+  }
+  @keyframes l3 {
+	  20%{background-position:0%   0%, 50%  50%,100%  50%}
+	  40%{background-position:0% 100%, 50%   0%,100%  50%}
+	  60%{background-position:0%  50%, 50% 100%,100%   0%}
+	  80%{background-position:0%  50%, 50%  50%,100% 100%}
+  }

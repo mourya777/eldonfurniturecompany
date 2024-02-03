@@ -313,6 +313,12 @@ jQuery(window).on('load',function () {
 	setTimeout(function(){
 		jQuery('#loading-area').remove();
 	}, 2000);
+
+		// will fade out the whole DIV that covers the website.
+	jQuery("#preloader").delay(1000).fadeOut("slow");
+	  $("#preloader").fadeOut(1000, function() {
+		  $('body').removeClass('loading');
+	  });
 	
 });
 /*  Window Load END */
@@ -322,4 +328,7 @@ jQuery(window).on('resize',function () {
 	'use strict'; 
 	MoonCart.resize();
 });
+
+
+	
 /*  Window Resize END */
